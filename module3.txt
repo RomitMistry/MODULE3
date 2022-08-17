@@ -1,0 +1,21 @@
+1)
+2)SELECT * FROM `employe_table` ORDER BY Deptno ASC;
+3)SELECT * FROM `employe_table` ORDER BY Job DESC;
+4)
+5)
+6)SELECT Empno, Ename, Sal FROM employe_table WHERE Mgr = 7369;
+7)SELECT * FROM `employe_table` WHERE Comm > Sal;
+8)SELECT * FROM `employe_table` WHERE Job = 'CLERK' OR Job = 'ANALYST' ORDER BY Job DESC;
+9)
+10)SELECT Ename FROM `employe_table` WHERE  Ename LIKE ('s%') ;
+12)SELECT * FROM `employe_table` WHERE Job = 'CLERK' ORDER  BY Deptno = 20;
+13)SELECT * FROM `employe_table` WHERE Empno>Mgr;
+14)SELECT * FROM employe_table WHERE Deptno = 20  AND Job IN(SELECT Job FROM employe_table WHERE Deptno = 10);
+15)
+16)
+17)
+18)SELECT  MAX(Sal) as Sal FROM `employe_table`;
+19)SELECT * FROM `employe_table` ORDER BY MAX(Sal);
+20)SELECT Ename,SUM(Sal) FROM `employe_table` WHERE Job = 'MANAGER';
+21)SELECT * FROM employe_table WHERE Ename LIKE '%A%';
+22)
