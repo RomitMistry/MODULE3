@@ -1,21 +1,26 @@
-1)
+1)SELECT DISTINCT Job FROM employe_table;
 2)SELECT * FROM `employe_table` ORDER BY Deptno ASC;
 3)SELECT * FROM `employe_table` ORDER BY Job DESC;
-4)
-5)
+4)SELECT * FROM `employe_table` WHERE Hiredate < "1981-1-1";
+5)SELECT Ename,Empno,Sal FROM `employe_table` ORDER BY Sal ASC;
 6)SELECT Empno, Ename, Sal FROM employe_table WHERE Mgr = 7369;
 7)SELECT * FROM `employe_table` WHERE Comm > Sal;
 8)SELECT * FROM `employe_table` WHERE Job = 'CLERK' OR Job = 'ANALYST' ORDER BY Job DESC;
-9)
+9)SELECT * FROM `employe_table` WHERE Sal  BETWEEN '1500' AND '8000';
 10)SELECT Ename FROM `employe_table` WHERE  Ename LIKE ('s%') ;
 12)SELECT * FROM `employe_table` WHERE Job = 'CLERK' ORDER  BY Deptno = 20;
 13)SELECT * FROM `employe_table` WHERE Empno>Mgr;
 14)SELECT * FROM employe_table WHERE Deptno = 20  AND Job IN(SELECT Job FROM employe_table WHERE Deptno = 10);
-15)
-16)
-17)
-18)SELECT  MAX(Sal) as Sal FROM `employe_table`;
-19)SELECT * FROM `employe_table` ORDER BY MAX(Sal);
-20)SELECT Ename,SUM(Sal) FROM `employe_table` WHERE Job = 'MANAGER';
+15)Select * from employe_table where sal in (select sal from employe_table where ( Ename = 'SMITH' or Ename = 'FORD' )) order by sal desc;
+16)select * from employe_table where job in (select job from employe_table where Ename = 'SMITH' or Ename = 'ALLEN');
+17)select e.Job,E.Ename from employe_table e where e.Deptno = 10 and e.Job not in (select Job from employe_table where Deptno =20); 
+18)SELECT max(Sal) FROM employe_table;
+19)select * from employe_table where sal in (select max(sal) from employe_table); 
+20)select sum(sal) from employe_table where job = 'MANAGER'; 
 21)SELECT * FROM employe_table WHERE Ename LIKE '%A%';
-22)
+22)select * from employe_table where Sal in (select min(Sal) from employe_table group by Job) order by Sal ASC;
+23)select * from employe_table where Sal>(select sal from employe_table where Ename = 'BLAKE');
+24)
+25)
+26)ALTER TABLE student ADD (pin bigint(10));
+27)
